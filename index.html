@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт компьютеров</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .position-relative {
+            position: relative;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .color-violet {
+            color: #36175E;
+        }
+
+        .color-blue {
+            color: #1B6D9D;
+        }
+
+        .color-black {
+            color: #000000;
+        }
+
+        .color-dark {
+            color: #2E2E2E;
+        }
+
+        .ff-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .fw-500 {
+            font-weight: 500;
+        }
+
+        .p-30 {
+            padding: 30px;
+        }
+
+        .py-10 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .px-20 {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+
+        .m-10 {
+            margin: 10px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mb-50 {
+            margin-bottom: 50px;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .me-20 {
+            margin-right: 20px;
+        }
+
+        .fz-12 {
+            font-size: 12px;
+        }
+
+        .fz-18 {
+            font-size: 18px;
+        }
+
+        .fz-20 {
+            font-size: 20px;
+        }
+
+        .fz-24 {
+            font-size: 24px;
+        }
+
+        .fz-32 {
+            font-size: 24px;
+        }
+
+        .fz-34 {
+            font-size: 24px;
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .border-blue {
+            border: 1px solid;
+            border-color: #1B6D9C;
+        }
+
+        .border-light {
+            border: 1px solid;
+            border-color: rgb(230, 230, 230);
+        }
+
+        .banner-border {
+            border: 17px solid;
+            border-color: #E1E1E3;
+        }
+
+        .border-radius-10 {
+            border-radius: 10px;
+        }
+
+        .box-shadow-light {
+            box-shadow: 0px 4px 20px 0px #E1E1E3;
+        }
+
+        .side-widget {
+            margin-bottom: 40px;
+        }
+
+        .side-widget:last-child {
+            margin-bottom: 0;
+        }
+
+        .content ul.gear-list>li:before {
+            content: "\f013";
+        }
+
+        .table-price>tbody>tr>td,
+        .table-price>tbody>tr>th,
+        .table-price>tfoot>tr>td,
+        .table-price>tfoot>tr>th,
+        .table-price>thead>tr>td,
+        .table-price>thead>tr>th {
+            padding: 8px;
+            border-top: none;
+            border-bottom: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+        }
+
+        .table-price>tbody>tr {
+            background: transparent;
+        }
+
+        .list-inline {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .list-inline>li {
+            display: inline-block;
+        }
+
+        .list-inline>li:not(:last-child) {
+            margin-right: 15px;
+        }
+
+        /* Решение для 5 колонок */
+
+        .col-xs-5ths,
+        .col-sm-5ths,
+        .col-md-5ths,
+        .col-lg-5ths {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .col-xs-5ths {
+            width: 20%;
+            float: left;
+        }
+
+        /* END Решение для 5 колонок */
+
+        .testimonial>img {
+            display: block;
+            width: 108px;
+            height: 108px;
+        }
+
+        .testimonial-container {
+            -ms-flex: 1;
+            flex: 1;
+        }
+
+        .testimonial-title>span {
+            color: #2E2E2E;
+            font-size: 18px;
+        }
+
+        .testimonial-title>img {
+            position: relative;
+            bottom: 4px;
+        }
+
+        .cta-block {
+            margin-top: 350px;
+        }
+
+        .cta-lg-img {
+            position: absolute;
+            bottom: calc(100% + 17px);
+            left: 0;
+        }
+
+        .uslugi-items .slick-track {
+            display: flex;
+        }
+
+        .uslugi-items .slick-slide {
+            height: auto;
+        }
+
+        .usluga-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid;
+            border-color: #36175E;
+            border-radius: 3px;
+            padding: 16px;
+        }
+
+        .usluga-card__top {
+            flex-grow: 2;
+        }
+
+        .usluga-card__top > ul {
+            margin-bottom: 10px;
+        }
+
+        .usluga-card__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .content ul.slick-dots {
+            margin-bottom: 15px;
+        }
+
+        .content ul.slick-dots li {
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .content ul.slick-dots > li::before {
+            content: none;
+        }
+
+        /* Адаптив */
+
+        @media (min-width: 768px) {
+            .fz-32 {
+            font-size: 32px;
+            }
+            .fz-34 {
+                font-size: 34px;
+            }
+            .col-sm-5ths {
+                width: 20%;
+                float: left;
+            }
+            .cta-block {
+                margin-top: 80px;
+            }
+            .cta-lg-img {
+                bottom: 0;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .col-md-5ths {
+                width: 20%;
+                float: left;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .col-lg-5ths {
+                width: 20%;
+                float: left;
+            }
+        }
+    </style>
+</head>
+
+<body class="base-template">
+
+    <div class="main-wrapper">
+        <div class="header">
+            <div class="top-bar-push"></div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="header-contacts-block">
+                        <div class="col-lg-4 col-sm-4 col-xs-12 header-addresses-block">
+                            <div class="header-address">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="map-marker-alt"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"
+                                    class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-2x">
+                                    <path fill="currentColor"
+                                        d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z"
+                                        class=""></path>
+                                </svg>
+                                г. Зеленоград, корп. 1824 (вход со двора)
+                            </div>
+                            <div class="header-address">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="map-marker-alt"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"
+                                    class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-2x">
+                                    <path fill="currentColor"
+                                        d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z"
+                                        class=""></path>
+                                </svg>
+                                г. Солнечногорск, Железнодорожный пр-д стр. 11
+                            </div>
+                            <div class="header-address"><br></div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4 col-xs-12 text-center header-logo-block align-middle">
+                            <a href="https://prok3g.ru/">
+                                <img src="img/shapka04-min.png.webp" alt="Prok3g.ru" data-retinasrc="img/logo2.jpg"
+                                    width="190" height="55">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-4 col-xs-12 header-phones-block">
+                            <div class="header-tel-1">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="phone-alt"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"
+                                    class="svg-inline--fa fa-phone-alt fa-w-16 fa-2x">
+                                    <path fill="currentColor"
+                                        d="M493.09 351.3L384.7 304.8a31.36 31.36 0 0 0-36.5 8.9l-44.1 53.9A350 350 0 0 1 144.5 208l53.9-44.1a31.35 31.35 0 0 0 8.9-36.49l-46.5-108.5A31.33 31.33 0 0 0 125 .81L24.2 24.11A31.05 31.05 0 0 0 0 54.51C0 307.8 205.3 512 457.49 512A31.23 31.23 0 0 0 488 487.7L511.19 387a31.21 31.21 0 0 0-18.1-35.7zM456.89 480C222.4 479.7 32.3 289.7 32.1 55.21l99.6-23 46 107.39-72.8 59.5C153.3 302.3 209.4 358.6 313 407.2l59.5-72.8 107.39 46z"
+                                        class=""></path>
+                                </svg>
+                                <a href="tel:+74991106233">+7 (499) 110-62-33</a>
+                            </div>
+                            <div class="header-tel-1">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="phone-alt"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"
+                                    class="svg-inline--fa fa-phone-alt fa-w-16 fa-2x">
+                                    <path fill="currentColor"
+                                        d="M493.09 351.3L384.7 304.8a31.36 31.36 0 0 0-36.5 8.9l-44.1 53.9A350 350 0 0 1 144.5 208l53.9-44.1a31.35 31.35 0 0 0 8.9-36.49l-46.5-108.5A31.33 31.33 0 0 0 125 .81L24.2 24.11A31.05 31.05 0 0 0 0 54.51C0 307.8 205.3 512 457.49 512A31.23 31.23 0 0 0 488 487.7L511.19 387a31.21 31.21 0 0 0-18.1-35.7zM456.89 480C222.4 479.7 32.3 289.7 32.1 55.21l99.6-23 46 107.39-72.8 59.5C153.3 302.3 209.4 358.6 313 407.2l59.5-72.8 107.39 46z"
+                                        class=""></path>
+                                </svg>
+                                <a href="tel:+79999617131">+7 (999) 961-71-31 (Зеленоград)</a>
+                            </div>
+                            <div class="header-tel-1">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="phone-alt"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"
+                                    class="svg-inline--fa fa-phone-alt fa-w-16 fa-2x">
+                                    <path fill="currentColor"
+                                        d="M493.09 351.3L384.7 304.8a31.36 31.36 0 0 0-36.5 8.9l-44.1 53.9A350 350 0 0 1 144.5 208l53.9-44.1a31.35 31.35 0 0 0 8.9-36.49l-46.5-108.5A31.33 31.33 0 0 0 125 .81L24.2 24.11A31.05 31.05 0 0 0 0 54.51C0 307.8 205.3 512 457.49 512A31.23 31.23 0 0 0 488 487.7L511.19 387a31.21 31.21 0 0 0-18.1-35.7zM456.89 480C222.4 479.7 32.3 289.7 32.1 55.21l99.6-23 46 107.39-72.8 59.5C153.3 302.3 209.4 358.6 313 407.2l59.5-72.8 107.39 46z"
+                                        class=""></path>
+                                </svg>
+                                <a href="tel:+79001404480">+7 (900) 140-44-80 (Солнечногорск)</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-bar fix-true ">
+                <div class="top-bar-container">
+                    <div class="inner relative">
+                        <div class="mob-menu-btn hidden-lg hidden-md">
+                            <span class="icon-menu-burger">
+                                <span class="icon-menu-burger__line"></span>
+                            </span>
+                        </div>
+                        <a href="#callback" class="button fancyboxModal "><span class="blink_on">Заказать
+                                звонок</span></a>
+                        <!-- ОСНОВНОЕ меню на МОБИЛЬНЫХ экранах -->
+                        <nav class="mobile-menu">
+                            <ul class="">
+                                <li class="first"><a href="/"><span>Главная</span></a></li>
+                                <li><a href="zapravka-kartridzhej/"><span>Заправка</span></a><span
+                                        class="dropdown-button"></span>
+                                    <ul class="">
+                                        <li class="first"><a
+                                                href="zapravka-kartridzhej/kartridzhi/"><span>Картриджи</span></a><span
+                                                class="dropdown-button"></span>
+                                            <ul class="">
+                                                <li class="first"><a
+                                                        href="zapravka-kartridzhej/kartridzhi/brother/"><span>Заправка
+                                                            картриджей Brother</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/canon/"><span>Заправка
+                                                            картриджей Canon</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/pantum/"><span>Заправка
+                                                            картриджей Pantum</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/epson/"><span>Заправка
+                                                            картриджей Epson</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/hewlett-packard/"><span>Заправка
+                                                            картриджей Hewlett Packard</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/kyocera-mita/"><span>Заправка
+                                                            картриджей Kyocera</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/panasonic/"><span>Заправка
+                                                            картриджей Panasonic</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/samsung/"><span>Заправка
+                                                            картриджей Samsung</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/xerox/"><span>Заправка
+                                                            картриджей Xerox</span></a></li>
+                                                <li class="last"><a
+                                                        href="zapravka-kartridzhej/kartridzhi/ricoh/"><span>Заправка
+                                                            картриджей Ricoh</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="magazin/"><span>магазин </span></a><span class="dropdown-button"></span>
+                                    <ul class="">
+                                        <li class="first active"><a href="magazin/novyie-kartridzhi/"><span>Новые
+                                                    картриджи</span></a><span class="dropdown-button"></span>
+                                            <ul class="">
+                                                <li class="first"><a
+                                                        href="magazin/novyie-kartridzhi/netproduct/"><span>NetProduct</span></a>
+                                                </li>
+                                                <li><a
+                                                        href="magazin/novyie-kartridzhi/hi-black/"><span>Hi-Black</span></a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="magazin/novyie-kartridzhi/drugoe/"><span>Другое</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="last"><a href="magazin/drugie-tovaryi/"><span>Другие
+                                                    товары</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="active down"><a href="remont-printerov.html"><span>Ремонт</span></a><span
+                                        class="dropdown-button"></span>
+                                    <ul class="">
+                                        <li class="first active down"><a href="#"><span>Ремонт
+                                                    компьютеров</span></a><span class="dropdown-button"></span>
+                                            <ul class="">
+                                                <li class="first">
+                                                    <a href="#"><span>Ремонт компьютеров</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Сборка компьютеров</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Компьютерная помощь</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Частный компьютерный мастер</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Компьютерный сервис</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Установка SSD</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Настройка БИОС</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Синий экран</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Восстановление данных</span></a>
+                                                </li>
+                                                <li class="last">
+                                                    <a href="#"><span>Диагностика компьютера</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="last down"><a href="#"><span>Ремонт Принтеров</span></a><span
+                                                class="dropdown-button"></span>
+                                            <ul class="">
+                                                <li class="first">
+                                                    <a href="#"><span>Пункт 1</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Пункт 2</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Пункт 3</span></a>
+                                                </li>
+                                                <li class="last">
+                                                    <a href="#"><span>Пункт 4</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="dostavka.html"><span>Доставка</span></a></li>
+                                <li><a href="garantii.html"><span>Гарантии</span></a></li>
+                                <li><a href="https://yandex.ru/maps/-/CCUM4Fwj8A" target="_blank"
+                                        rel="nofollow"><span>Отзывы</span></a></li>
+                                <li><a href="rabotyi/"><span>Работы</span></a></li>
+                                <li class="last"><a href="kontaktyi/"><span>Контакты</span></a></li>
+                            </ul>
+                        </nav>
+                        <!-- ОСНОВНОЕ меню на БОЛЬШИХ экранах -->
+                        <div class="top-menu">
+                            <ul class="">
+                                <li class="first"><a href="/"><span>Главная</span></a></li>
+                                <li class="down"><a href="zapravka-kartridzhej/"><span>Заправка</span></a>
+                                    <ul class="">
+                                        <li class="first down"><a
+                                                href="zapravka-kartridzhej/kartridzhi/"><span>Картриджи</span></a>
+                                            <ul class="">
+                                                <li class="first"><a
+                                                        href="zapravka-kartridzhej/kartridzhi/brother/"><span>Заправка
+                                                            картриджей Brother</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/canon/"><span>Заправка
+                                                            картриджей Canon</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/pantum/"><span>Заправка
+                                                            картриджей Pantum</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/epson/"><span>Заправка
+                                                            картриджей Epson</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/hewlett-packard/"><span>Заправка
+                                                            картриджей Hewlett Packard</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/kyocera-mita/"><span>Заправка
+                                                            картриджей Kyocera</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/panasonic/"><span>Заправка
+                                                            картриджей Panasonic</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/samsung/"><span>Заправка
+                                                            картриджей Samsung</span></a></li>
+                                                <li><a href="zapravka-kartridzhej/kartridzhi/xerox/"><span>Заправка
+                                                            картриджей Xerox</span></a></li>
+                                                <li class="last"><a
+                                                        href="zapravka-kartridzhej/kartridzhi/ricoh/"><span>Заправка
+                                                            картриджей Ricoh</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="down"><a href="magazin/"><span>магазин </span></a>
+                                    <ul class="">
+                                        <li class="first down"><a href="magazin/novyie-kartridzhi/"><span>Новые
+                                                    картриджи</span></a>
+                                            <ul class="">
+                                                <li class="first"><a
+                                                        href="magazin/novyie-kartridzhi/netproduct/"><span>NetProduct</span></a>
+                                                </li>
+                                                <li><a
+                                                        href="magazin/novyie-kartridzhi/hi-black/"><span>Hi-Black</span></a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="magazin/novyie-kartridzhi/drugoe/"><span>Другое</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="last"><a href="magazin/drugie-tovaryi/"><span>Другие
+                                                    товары</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="active down"><a href="remont-printerov.html"><span>Ремонт</span></a>
+                                    <ul class="">
+                                        <li class="first active down"><a href="#"><span>Ремонт
+                                                    компьютеров</span></a><span class="dropdown-button"></span>
+                                            <ul class="">
+                                                <li class="first">
+                                                    <a href="#"><span>Ремонт компьютеров</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Сборка компьютеров</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Компьютерная помощь</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Частный компьютерный мастер</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Компьютерный сервис</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Установка SSD</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Настройка БИОС</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Синий экран</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Восстановление данных</span></a>
+                                                </li>
+                                                <li class="last">
+                                                    <a href="#"><span>Диагностика компьютера</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="last down"><a href="#"><span>Ремонт принтеров</span></a><span
+                                                class="dropdown-button"></span>
+                                            <ul class="">
+                                                <li class="first">
+                                                    <a href="#"><span>Пункт 1</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Пункт 2</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span>Пункт 3</span></a>
+                                                </li>
+                                                <li class="last">
+                                                    <a href="#"><span>Пункт 4</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li><a href="dostavka.html"><span>Доставка</span></a></li>
+                                <li><a href="garantii.html"><span>Гарантии</span></a></li>
+                                <li><a href="https://yandex.ru/maps/-/CCUM4Fwj8A" target="_blank"
+                                        rel="nofollow"><span>Отзывы</span></a></li>
+                                <li><a href="rabotyi/"><span>Работы</span></a></li>
+                                <li class="last"><a href="kontaktyi/"><span>Контакты</span></a></li>
+                            </ul>
+                            <div class="cleaner"></div>
+                        </div>
+                        <div class="header-cart text-center relative">
+                            <div id="msMiniCart" class="">
+                                <div class="empty">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fal"
+                                        data-icon="shopping-cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                                        viewbox="0 0 576 512" class="svg-inline--fa fa-shopping-cart fa-w-18 fa-2x">
+                                        <path fill="currentColor"
+                                            d="M551.991 64H129.28l-8.329-44.423C118.822 8.226 108.911 0 97.362 0H12C5.373 0 0 5.373 0 12v8c0 6.627 5.373 12 12 12h78.72l69.927 372.946C150.305 416.314 144 431.42 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-17.993-7.435-34.24-19.388-45.868C506.022 391.891 496.76 384 485.328 384H189.28l-12-64h331.381c11.368 0 21.177-7.976 23.496-19.105l43.331-208C578.592 77.991 567.215 64 551.991 64zM240 448c0 17.645-14.355 32-32 32s-32-14.355-32-32 14.355-32 32-32 32 14.355 32 32zm224 32c-17.645 0-32-14.355-32-32s14.355-32 32-32 32 14.355 32 32-14.355 32-32 32zm38.156-192H171.28l-36-192h406.876l-40 192z"
+                                            class=""></path>
+                                    </svg>
+                                    <span>0</span>
+                                </div>
+                                <div class="not_empty">
+                                    <a href="sluzhebnyie-straniczyi/korzina.html" class="absolute"></a>
+                                    <div>
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fal"
+                                            data-icon="shopping-cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                                            viewbox="0 0 576 512" class="svg-inline--fa fa-shopping-cart fa-w-18 fa-2x">
+                                            <path fill="currentColor"
+                                                d="M551.991 64H129.28l-8.329-44.423C118.822 8.226 108.911 0 97.362 0H12C5.373 0 0 5.373 0 12v8c0 6.627 5.373 12 12 12h78.72l69.927 372.946C150.305 416.314 144 431.42 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-17.993-7.435-34.24-19.388-45.868C506.022 391.891 496.76 384 485.328 384H189.28l-12-64h331.381c11.368 0 21.177-7.976 23.496-19.105l43.331-208C578.592 77.991 567.215 64 551.991 64zM240 448c0 17.645-14.355 32-32 32s-32-14.355-32-32 14.355-32 32-32 32 14.355 32 32zm224 32c-17.645 0-32-14.355-32-32s14.355-32 32-32 32 14.355 32 32-14.355 32-32 32zm38.156-192H171.28l-36-192h406.876l-40 192z"
+                                                class=""></path>
+                                        </svg>
+                                        <span class="ms2_total_count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-bar-push-md cleaner visible-md"></div>
+        </div>
+
+        <div class="search_main_section" style="background: #36175e">
+            <div class="container">
+                <br><br>
+                <form data-key="926560fef293f2c628e5e9942acfcd82a158b7ef" action="poisk.html" method="get"
+                    class="well msearch2" id="mse2_form">
+                    <div class="row">
+                        <div class="form-group col-md-10">
+                            <input type="text" class="form-control" name="query"
+                                placeholder="Введите номер картриджа или принтера без букв" value="" />
+                        </div>
+                        <button type="submit" class="btn btn-default button">
+                            <i class="glyphicon glyphicon-search"></i> Поиск
+                        </button>
+                    </div>
+                </form>
+                <br><br>
+            </div>
+        </div>
+
+
+        <!-- Контейнер с контентом -->
+        <div class="middle">
+            <div class="container">
+                <!-- Хлебные крошки -->
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">магазин </a></li>
+                    <li class="breadcrumb-item active">Ремонт</li>
+                </ol>
+                <h1 class="pagetitle">Ремонт компьютеров</h1>
+                <div class="push5 visible-xs visible-sm"></div>
+                <!-- Блок инфо с сайдбаром -->
+                <div class="row">
+                    <!-- Основной контент -->
+                    <div class="col-md-8 col-md-push-4">
+                        <div class="main-column">
+                            <div class="content">
+                                <h2>Ремонт компьютеров</h2>
+                                <div class="border-light border-radius-10 px-20 py-10 mb-50">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="py-10 text-center">
+                                                <img src="img/prok3g_file/image_329х226.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="py-10">
+                                                <p class="ff-montserrat fz-24 fw-500 color-violet">от 400 руб.</p>
+                                                <ul class="gear-list">
+                                                    <li>диагностика и ремонт компьютера с выездом на дом;</li>
+                                                    <li>модернизация оборудования;</li>
+                                                    <li>замена неисправных комплектующих;</li>
+                                                    <li>восстановление удаленной информации;</li>
+                                                    <li>настройка БИОС и т. д.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-50">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-7">
+                                            <div class="py-10">
+                                                <h2>Оформить заявку</h2>
+                                                <form method="post" action="#">
+                                                    <div class="form-group mb-20">
+                                                        <label class="label">Имя*</label>
+                                                        <input type="text" name="nametel" class="form-control required"
+                                                            placeholder="Александр">
+                                                    </div>
+                                                    <div class="form-group mb-20">
+                                                        <label class="label">Телефон*</label>
+                                                        <input type="text" name="inputtel"
+                                                            class="form-control required tel"
+                                                            placeholder="8 (    ) ___-__-__">
+                                                    </div>
+                                                    <div class="form-group mb-20 checkbox">
+                                                        <label>
+                                                            <input type="checkbox"> Согласен на обработку персональных
+                                                            данных
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-group mt-30">
+                                                        <button type="submit" class="button btn">Отправить</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+                                            <div class="py-10">
+                                                <p>Получи бесплатную консультацию от компьютерного сервиса Master Soft:
+                                                </p>
+                                                <ul>
+                                                    <li>Диагностика — бесплатно.</li>
+                                                    <li>Ремонт монохромного лазерного принтера формата А4— 1500р.</li>
+                                                    <li>Ремонт цветного лазерного принтера формата А4 — 1500р.</li>
+                                                    <li>Ремонт цветного струйного принтера формата А4 — 1500р.</li>
+                                                    <li>Программный сброс счетчика отработанных чернил («памперса») —
+                                                        1000р.</li>
+                                                    <li>Прошивка принтера (при заправке картридж не требует замены чипа)
+                                                        — от 1000р.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-50">
+                                    <p>Каждому принтеру и МФУ, как автомобилю, требуется техническое обслуживание и
+                                        ремонт. Изнашиваются ролики захвата бумаги, попадает пыль и мусор на стекло
+                                        лазера и узел термозакрепления.</p>
+                                    <p>При любом ремонте или регламентных работах для монохромного принтера, вас ждет
+                                        приятный бонус. Мы бесплатно заправим и почистим Ваш картридж.</p>
+                                </div>
+                                <div class="mb-50">
+                                    <h2>Цены</h2>
+                                    <table class="table table-price">
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Установка кулера для процессора (замена)</td>
+                                                <td><b>490 руб.</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Установка процессора в материнскую плату (замена)</td>
+                                                <td><b>490 руб.</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Установка видеокарты в материнскую плату (замена)</td>
+                                                <td><b>490 руб.</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Установка материнской платы в системный блок (замена)</td>
+                                                <td><b>990 руб.</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Установка блока питания в системный блок (замена)</td>
+                                                <td><b>490 руб.</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Установка жесткого диска в системный блок (замена)</td>
+                                                <td><b>490 руб.</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Замена корпуса системного блока компьютера</td>
+                                                <td><b>1990 руб.</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="mb-50">
+                                    <h2>Услуги</h2>
+                                    <div class="mb-20">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="py-10">
+                                                    <div class="text-center">
+                                                        <img src="img/prok3g_file/uslugi_imeg_288x308.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="py-10">
+                                                    <p>Сотрудники нашей компании осуществляют ремонт компьютеров в
+                                                        Москве и Подмосковье на дому и в мастерской. Они оперативно
+                                                        прибудут в указанное место, чтобы выявить и устранить причину
+                                                        неполадки.</p>
+                                                    <p>Благодаря современному диагностическому оборудованию и
+                                                        качественным инструментам наши мастера справятся с любой
+                                                        задачей. При этом мы с легкостью достанем все необходимые
+                                                        запчасти, что существенно упрощает и ускоряет процесс ремонта.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-20">
+                                        <ul class="list-inline">
+                                            <li>модернизация оборудования</li>
+                                            <li>диагностика и ремонт компьютера с выездом на дом</li>
+                                            <li>замена неисправных комплектующих</li>
+                                            <li>восстановление удаленной информации</li>
+                                            <li>диагностика и ремонт компьютера с выездом на дом</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-20">
+                                        <div class="row">
+                                            <div class="col-md-5ths col-xs-6">
+                                                <div class="py-10">
+                                                    <div class="text-center">
+                                                        <div class="mb-10">
+                                                            <img src="img/prok3g_file/icon_uslugi/Frame_58.png" alt="">
+                                                        </div>
+                                                        <span class="fz-12 color-black bold">Ремонтируем всё 11 лет
+                                                            опыта</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5ths col-xs-6">
+                                                <div class="py-10">
+                                                    <div class="text-center">
+                                                        <div class="mb-10">
+                                                            <img src="img/prok3g_file/icon_uslugi/Frame_59.png" alt="">
+                                                        </div>
+                                                        <span class="fz-12 color-black bold">Ремонтируем всё 11 лет
+                                                            опыта</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5ths col-xs-6">
+                                                <div class="py-10">
+                                                    <div class="text-center">
+                                                        <div class="mb-10">
+                                                            <img src="img/prok3g_file/icon_uslugi/Frame_60.png" alt="">
+                                                        </div>
+                                                        <span class="fz-12 color-black bold">Ремонтируем всё 11 лет
+                                                            опыта</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5ths col-xs-6">
+                                                <div class="py-10">
+                                                    <div class="text-center">
+                                                        <div class="mb-10">
+                                                            <img src="img/prok3g_file/icon_uslugi/Frame_61.png" alt="">
+                                                        </div>
+                                                        <span class="fz-12 color-black bold">Ремонтируем всё 11 лет
+                                                            опыта</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5ths col-xs-6">
+                                                <div class="py-10">
+                                                    <div class="text-center">
+                                                        <div class="mb-10">
+                                                            <img src="img/prok3g_file/icon_uslugi/Frame_62.png" alt="">
+                                                        </div>
+                                                        <span class="fz-12 color-black bold">Ремонтируем всё 11 лет
+                                                            опыта</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-50">
+                                    <h2>Наши преимущества</h2>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-7">
+                                            <div class="py-10">
+                                                <div class="text-center">
+                                                    <img src="img/prok3g_file/pngwing.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+                                            <div class="py-10">
+                                                <ul>
+                                                    <li>выполнение большинства заказов в течение 1 часа</li>
+                                                    <li>срочный ремонт ПК</li>
+                                                    <li>бесплатный выезд сотрудников по городу</li>
+                                                    <li>наличие гарантии качества на все наши комплектующие и услуги;
+                                                    </li>
+                                                    <li>доступные цены на выполнение ремонтных работ;</li>
+                                                    <li>постоянные акции и скидки, которые позволяют дополнительно
+                                                        сэкономить и т. д.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-50">
+                                    <div class="mb-50 text-center">
+                                        <h2>Этапы работы</h2>
+                                        <img src="img/prok3g_file/Group_27.svg" alt="">
+                                    </div>
+                                    <div class="cta-block banner-border position-relative p-30">
+                                        <img class="cta-lg-img" src="img/prok3g_file/sale_221x313.png" alt="">
+                                        <div class="row">
+                                            <div class="col-sm-9 col-sm-offset-3">
+                                                <div class="cta-block__text">
+                                                    <div class="mb-20">
+                                                        <span class="fz-32 color-dark">Скидка <span class="fz-34 bold">20%</span> при оформлении
+                                                            онлайн заявки</span>
+                                                    </div>
+                                                    <button type="submit" class="button btn">Отправить</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-50">
+                                    <h2>Отзывы</h2>
+                                    <div class="testimonial d-flex flex-wrap">
+                                        <img src="img/prok3g_file/foto_otziv.png" class="me-20" alt="">
+                                        <div class="testimonial-container">
+                                            <div class="testimonial-title mb-10">
+                                                <span>Марина</span>
+                                                <img src="img/prok3g_file/IMAGE_stars.png" alt="">
+                                            </div>
+                                            <div class="testimonial-text">
+                                                <p>В субботу ноутбук отказался запускаться. Вызвала мастера и настроилась ждать до понедельника. Но нет, компьютерщик приехал быстро и за час времени все пофиксил. При этом ноут стал работать быстрее. Рекомендую!</p>
+                                            </div>
+                                            <div class="testimonial-date">
+                                                <span>21.01.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- СЛАЙДЕР -->
+                                <!-- <div class="mb-50">
+                                    <div class="uslugi-items slick-slider">
+                                        <div class="m-10">
+                                            <div class="usluga-card position-relative">
+                                                <div class="usluga-card__top">
+                                                    <p class="ff-montserrat fz-20 color-black">Ремонт ноутбуков</p>
+                                                    <ul>
+                                                        <li>Чистка ноутбуков</li>
+                                                        <li>Увеличение опертивной памяти</li>
+                                                        <li>Замена клавиатуры</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="usluga-card__bottom">
+                                                    <span class="ff-montserrat fz-18 fw-500 color-violet">от 400 руб.</span>
+                                                    <img src="img/icons_uslugi/Frame_71.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-10">
+                                            <div class="usluga-card position-relative">
+                                                <div class="usluga-card__top">
+                                                    <p class="ff-montserrat fz-20 color-black">Ремонт компьютеров</p>
+                                                    <ul>
+                                                        <li>Чистка ноутбуков</li>
+                                                        <li>Увеличение опертивной памяти</li>
+                                                        <li>Замена клавиатуры</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="usluga-card__bottom">
+                                                    <span class="ff-montserrat fz-18 fw-500 color-violet">от 400 руб.</span>
+                                                    <img src="img/icons_uslugi/Frame_71-1.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-10">
+                                            <div class="usluga-card position-relative">
+                                                <div class="usluga-card__top">
+                                                    <p class="ff-montserrat fz-20 color-black">Установка ПО</p>
+                                                    <ul>
+                                                        <li>Чистка ноутбуков</li>
+                                                        <li>Увеличение опертивной памяти</li>
+                                                        <li>Замена клавиатуры</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="usluga-card__bottom">
+                                                    <span class="ff-montserrat fz-18 fw-500 color-violet">от 400 руб.</span>
+                                                    <img src="img/icons_uslugi/Frame_71-2.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-10">
+                                            <div class="usluga-card position-relative">
+                                                <div class="usluga-card__top">
+                                                    <p class="ff-montserrat fz-20 color-black">Модернизация ПК</p>
+                                                    <ul>
+                                                        <li>Чистка ноутбуков</li>
+                                                        <li>Увеличение опертивной памяти</li>
+                                                        <li>Замена клавиатуры</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="usluga-card__bottom">
+                                                    <span class="ff-montserrat fz-18 fw-500 color-violet">от 400 руб.</span>
+                                                    <img src="img/icons_uslugi/Frame_71-3.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="push20"></div>
+                        </div>
+                    </div>
+                    <!-- Боковое меню на БОЛЬШИХ экранах -->
+                    <div class="col-md-4 col-md-pull-8">
+                        <div class="aside side-widget">
+                            <nav class="aside-menu visible-md visible-lg">
+                                <ul class="">
+                                    <li class="active"><a href="#">Ремонт компьютеров</a>
+                                    <li><a href="#">Сборка компьютеров</a></li>
+                                    <li><a href="#">Компьютерная помощь</a></li>
+                                    <li><a href="#">Частный компьютерный мастер</a></li>
+                                    <li><a href="#">Компьютерный сервис</a></li>
+                                    <li><a href="#">Установка SSD</a></li>
+                                    <li><a href="#">Настройка БИОС</a></li>
+                                    <li><a href="#">Синий экран</a></li>
+                                    <li><a href="#">Восстановление данных</a></li>
+                                    <li><a href="#">Диагностика компьютера</a></li>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="aside side-widget">
+                            <div class="banner-border text-center p-30">
+                                <img src="img/aside-banner.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="aside side-widget">
+                            <p><em class="fz-12 bold">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Obcaecati sint ex a tenetur, eveniet velit eum doloribus, iusto maxime pariatur
+                                    assumenda dolorem ipsa nemo magni cum sed nam odio beatae!</em></p>
+                        </div>
+                        <div class="aside side-widget">
+                            <div class="border-blue p-30">
+                                <div class="text-center">
+                                    <p class="fz-18 text-uppercase">Оплата</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/pay/IMAGE.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/pay/IMAGE-2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/pay/mir-logo 1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/pay/IMAGE-1.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aside side-widget">
+                            <div class="border-blue p-30">
+                                <div class="text-center">
+                                    <p class="fz-18 text-uppercase">Работаем с производителями</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-4.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-5.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-6.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-7.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-8.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-11.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-9.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-center py-10">
+                                            <img src="img/company/IMAGE-10.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="push30"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-push"></div>
+    </div>
+
+    <div class="footer-wrapper"></div>
+
+    <script src="js/slick.min.js"></script>
+    <script>
+        $('.uslugi-items').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<a href="#" class="slick-prev slick-arrow slick-ar-2 slick-ar-2-prev" style=""><i class="material-icons">navigate_before</i></a>',
+            nextArrow: '<a href="#" class="slick-next slick-arrow slick-ar-2 slick-ar-2-next" style=""><i class="material-icons">navigate_next</i></a>',
+            dots: false,
+            swipeToSlide: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
+                        arrows: false,
+                        dots: true,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        arrows: false,
+                        dots: true,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        arrows: false,
+                        dots: true,
+                    }
+                },
+            ],
+        });
+    </script>
+</body>
+
+</html>
